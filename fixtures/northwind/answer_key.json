@@ -1,0 +1,242 @@
+{
+  "_comment": "Hidden answer key for the Northwind fixtures. Never shown to the proposer.",
+  "controls": [
+    {
+      "id": "A-01",
+      "anchor": "Business owners review SAP user access quarterly",
+      "modules": [
+        "AC-UAR"
+      ],
+      "systems": [
+        "SAP ECC"
+      ],
+      "defined_criteria": {
+        "UAR-C": "Business owners",
+        "UAR-D": "15 business days"
+      },
+      "undefined_criteria": [
+        "UAR-F"
+      ],
+      "contradictions": [
+        "removal_timeframe"
+      ],
+      "quality": {
+        "material_risks": [
+          "used",
+          "lookback"
+        ],
+        "required_procedures": [
+          "UAR-A",
+          "UAR-B",
+          "UAR-C",
+          "UAR-D",
+          "UAR-E"
+        ],
+        "evidence_keywords": [
+          "SUIM",
+          "ServiceNow"
+        ],
+        "population_keywords": [
+          "review"
+        ],
+        "pass_fail_values": {
+          "UAR-D": "15 business days"
+        }
+      }
+    },
+    {
+      "id": "A-05",
+      "anchor": "New SAP access is requested in ServiceNow",
+      "modules": [
+        "AC-PROV"
+      ],
+      "systems": [
+        "SAP ECC"
+      ],
+      "defined_criteria": {
+        "PROV-B": "requester's manager",
+        "PROV-C": "before"
+      },
+      "undefined_criteria": [
+        "PROV-E",
+        "PROV-G"
+      ],
+      "contradictions": [],
+      "quality": {
+        "material_risks": [
+          "SU01",
+          "directly",
+          "not covered"
+        ],
+        "required_procedures": [
+          "PROV-A",
+          "PROV-B",
+          "PROV-C",
+          "PROV-D"
+        ],
+        "evidence_keywords": [
+          "ServiceNow"
+        ],
+        "population_keywords": [
+          "SAP"
+        ],
+        "pass_fail_values": {
+          "PROV-B": "requester's manager"
+        }
+      }
+    },
+    {
+      "id": "A-05b",
+      "anchor": "Baseline SAP display roles are assigned automatically",
+      "modules": [
+        "AC-PROV"
+      ],
+      "systems": [
+        "SAP ECC"
+      ],
+      "defined_criteria": {
+        "PROV-F": "HR Systems Lead"
+      },
+      "undefined_criteria": [
+        "PROV-G"
+      ],
+      "contradictions": [],
+      "quality": {
+        "material_risks": [
+          "job code",
+          "feed"
+        ],
+        "required_procedures": [
+          "PROV-A",
+          "PROV-F"
+        ],
+        "evidence_keywords": [
+          "HR"
+        ],
+        "population_keywords": [
+          "SAP"
+        ],
+        "pass_fail_values": {}
+      }
+    },
+    {
+      "id": "A-03",
+      "anchor": "SAP transports are approved by the CAB",
+      "modules": [
+        "CM-CHG"
+      ],
+      "systems": [
+        "SAP ECC"
+      ],
+      "defined_criteria": {
+        "CHG-C": "CAB",
+        "CHG-B": "UAT"
+      },
+      "undefined_criteria": [],
+      "contradictions": [],
+      "quality": {
+        "material_risks": [
+          "developer keys",
+          "also hold"
+        ],
+        "required_procedures": [
+          "CHG-A",
+          "CHG-B",
+          "CHG-C",
+          "CHG-D",
+          "CHG-E",
+          "CHG-F"
+        ],
+        "evidence_keywords": [
+          "transport"
+        ],
+        "population_keywords": [
+          "transport"
+        ],
+        "pass_fail_values": {
+          "CHG-C": "CAB"
+        }
+      }
+    },
+    {
+      "id": "A-13",
+      "anchor": "Controller reviews Concur",
+      "modules": [
+        "AC-UAR"
+      ],
+      "systems": [
+        "Concur"
+      ],
+      "defined_criteria": {
+        "UAR-C": "Controller"
+      },
+      "undefined_criteria": [
+        "UAR-D",
+        "UAR-F"
+      ],
+      "contradictions": [],
+      "quality": {
+        "material_risks": [
+          "timeframe",
+          "used"
+        ],
+        "required_procedures": [
+          "UAR-B",
+          "UAR-C",
+          "UAR-E"
+        ],
+        "evidence_keywords": [
+          "Concur"
+        ],
+        "population_keywords": [
+          "Concur"
+        ],
+        "pass_fail_values": {
+          "UAR-C": "Controller"
+        }
+      }
+    }
+  ],
+  "distractors": [
+    {
+      "anchor": "Vendor master data changes in SAP are reviewed weekly",
+      "reason": "business process review linked to an access risk; not a change management ITGC"
+    }
+  ],
+  "expected_not_covered": [
+    {
+      "system": "SAP ECC",
+      "module": "AC-UAR",
+      "expectation": "UAR-DE6"
+    },
+    {
+      "system": "SAP ECC",
+      "module": "AC-PROV",
+      "expectation": "PROV-DE5"
+    },
+    {
+      "system": "SAP ECC",
+      "module": "AC-PROV",
+      "expectation": "PROV-DE7"
+    },
+    {
+      "system": "Concur",
+      "module": "AC-UAR",
+      "expectation": "UAR-DE6"
+    }
+  ],
+  "expected_contradictions": [
+    {
+      "control_anchor": "Business owners review SAP user access quarterly",
+      "subject": "removal_timeframe",
+      "values": [
+        "5 business days",
+        "3 business days"
+      ]
+    }
+  ],
+  "quality_authoring": {
+    "authored_by": "Claude, as a draft",
+    "status": "NOT YET REVIEWED by a qualified auditor"
+  }
+}

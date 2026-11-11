@@ -1,0 +1,283 @@
+{
+  "_comment": "Hidden answer key. Never shown to the proposer. Anchors are distinctive phrases from the documents that identify a control.",
+  "controls": [
+    {
+      "id": "okta-lifecycle",
+      "anchor": "Okta picks it up within the hour",
+      "modules": [
+        "AC-PROV"
+      ],
+      "systems": [
+        "NetSuite",
+        "ClaimsLens"
+      ],
+      "defined_criteria": {},
+      "undefined_criteria": [
+        "PROV-B",
+        "PROV-C",
+        "PROV-G"
+      ],
+      "contributions_full": [
+        "PROV-DE6"
+      ],
+      "contradictions": [],
+      "quality": {
+        "material_risks": [
+          "no approval",
+          "rule",
+          "group"
+        ],
+        "required_procedures": [
+          "PROV-A",
+          "PROV-F"
+        ],
+        "evidence_keywords": [
+          "Okta",
+          "Workday"
+        ],
+        "population_keywords": [
+          "Okta"
+        ],
+        "pass_fail_values": {}
+      }
+    },
+    {
+      "id": "jira-roles",
+      "anchor": "has to be requested in Jira",
+      "modules": [
+        "AC-PROV"
+      ],
+      "systems": [
+        "NetSuite"
+      ],
+      "defined_criteria": {
+        "PROV-B": "Finance Systems Manager",
+        "PROV-C": "before"
+      },
+      "undefined_criteria": [
+        "PROV-E",
+        "PROV-G"
+      ],
+      "contributions_full": [
+        "PROV-DE2",
+        "PROV-DE3"
+      ],
+      "contradictions": [],
+      "quality": {
+        "material_risks": [
+          "conflict",
+          "self",
+          "assign"
+        ],
+        "required_procedures": [
+          "PROV-A",
+          "PROV-B",
+          "PROV-C",
+          "PROV-D"
+        ],
+        "evidence_keywords": [
+          "Jira",
+          "NetSuite"
+        ],
+        "population_keywords": [
+          "NetSuite"
+        ],
+        "pass_fail_values": {
+          "PROV-B": "Finance Systems Manager"
+        }
+      }
+    },
+    {
+      "id": "netsuite-review",
+      "anchor": "Twice a year the Controller receives an export",
+      "modules": [
+        "AC-UAR"
+      ],
+      "systems": [
+        "NetSuite"
+      ],
+      "defined_criteria": {
+        "UAR-C": "Controller"
+      },
+      "undefined_criteria": [
+        "UAR-D",
+        "UAR-F"
+      ],
+      "contributions_full": [
+        "UAR-DE2",
+        "UAR-DE3"
+      ],
+      "contradictions": [
+        "removal_timeframe"
+      ],
+      "quality": {
+        "material_risks": [
+          "used",
+          "integration",
+          "complete"
+        ],
+        "required_procedures": [
+          "UAR-A",
+          "UAR-B",
+          "UAR-C"
+        ],
+        "evidence_keywords": [
+          "saved search",
+          "export"
+        ],
+        "population_keywords": [
+          "review"
+        ],
+        "pass_fail_values": {
+          "UAR-C": "Controller"
+        }
+      }
+    },
+    {
+      "id": "netsuite-change",
+      "anchor": "Customisations and SuiteScripts for NetSuite",
+      "modules": [
+        "CM-CHG"
+      ],
+      "systems": [
+        "NetSuite"
+      ],
+      "defined_criteria": {
+        "CHG-C": "Finance Systems Manager",
+        "CHG-B": "sandbox"
+      },
+      "undefined_criteria": [
+        "CHG-E"
+      ],
+      "contributions_full": [
+        "CHG-DE2",
+        "CHG-DE3",
+        "CHG-DE4"
+      ],
+      "contributions_not_full": [
+        "CHG-DE5",
+        "CHG-DE6"
+      ],
+      "contradictions": [],
+      "quality": {
+        "material_risks": [
+          "develops and deploys",
+          "emergency"
+        ],
+        "required_procedures": [
+          "CHG-A",
+          "CHG-B",
+          "CHG-C"
+        ],
+        "evidence_keywords": [
+          "Jira",
+          "SuiteCloud"
+        ],
+        "population_keywords": [
+          "production"
+        ],
+        "pass_fail_values": {
+          "CHG-C": "Finance Systems Manager"
+        }
+      }
+    },
+    {
+      "id": "claimslens-pipeline",
+      "anchor": "branch protection requires a pull request",
+      "modules": [
+        "CM-CHG"
+      ],
+      "systems": [
+        "ClaimsLens"
+      ],
+      "defined_criteria": {
+        "CHG-C": "second Cirrus Ops engineer"
+      },
+      "undefined_criteria": [
+        "CHG-B",
+        "CHG-E"
+      ],
+      "contributions_full": [
+        "CHG-DE2",
+        "CHG-DE4"
+      ],
+      "contradictions": [],
+      "quality": {
+        "material_risks": [
+          "SOC",
+          "bypass",
+          "testing"
+        ],
+        "required_procedures": [
+          "CHG-A",
+          "CHG-C"
+        ],
+        "evidence_keywords": [
+          "GitHub",
+          "pull request"
+        ],
+        "population_keywords": [
+          "merge"
+        ],
+        "pass_fail_values": {
+          "CHG-C": "second Cirrus Ops engineer"
+        }
+      }
+    }
+  ],
+  "distractors": [
+    {
+      "anchor": "reconciles the bank statement",
+      "reason": "business process control, not an ITGC in scope"
+    },
+    {
+      "anchor": "nightly snapshots",
+      "reason": "backup, outside the three modules in scope"
+    },
+    {
+      "anchor": "Jira Service Management queue for incidents",
+      "reason": "incident management, outside scope"
+    }
+  ],
+  "expected_not_covered": [
+    {
+      "system": "NetSuite",
+      "module": "AC-UAR",
+      "expectation": "UAR-DE6"
+    },
+    {
+      "system": "NetSuite",
+      "module": "AC-PROV",
+      "expectation": "PROV-DE5"
+    },
+    {
+      "system": "NetSuite",
+      "module": "AC-PROV",
+      "expectation": "PROV-DE7"
+    },
+    {
+      "system": "NetSuite",
+      "module": "CM-CHG",
+      "expectation": "CHG-DE6"
+    },
+    {
+      "system": "ClaimsLens",
+      "module": "AC-UAR",
+      "expectation": "UAR-DE2"
+    }
+  ],
+  "expected_contradictions": [
+    {
+      "control_anchor": "Twice a year the Controller receives an export",
+      "subject": "removal_timeframe",
+      "values": [
+        "5 business days",
+        "10 business days"
+      ]
+    }
+  ],
+  "quality_authoring": {
+    "authored_by": "Claude, as a draft",
+    "status": "NOT YET REVIEWED by a qualified auditor; treat quality scores as provisional until a human owns this key"
+  }
+}

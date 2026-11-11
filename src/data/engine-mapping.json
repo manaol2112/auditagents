@@ -1,0 +1,33 @@
+{
+  "_note": "Engine-side mappings that the methodology text does not supply. Hand-maintained; not approved methodology content. risk_category is the controlled value used in client RCMs and by the proposer; control_types are RCM 'Type' values that map deterministically; criteria maps an operating attribute to the client-stated field that fixes its operating criterion and the general design criterion breached when no source defines it. Attributes not listed take their criterion from the methodology text.",
+  "modules": {
+    "AC-UAR":  { "risk_category": "inappropriate access", "control_types": ["periodic access review"], "pattern": "recurring",
+                 "criteria": { "UAR-C": ["reviewer", "D1"], "UAR-D": ["completion_timeframe", "D6"], "UAR-E": ["removal_timeframe", "D6"], "UAR-F": ["lookback", "D6"] } },
+    "AC-PRIV": { "risk_category": "inappropriate access", "control_types": ["privileged access", "privileged access review", "emergency access"], "pattern": "configuration",
+                 "criteria": { "PRIV-E": ["shared_account_rules", "D1"], "PRIV-F": ["approver", "D1"], "PRIV-H": ["completion_timeframe", "D6"],
+                               "PRIV-J": ["emergency_approver", "D1"], "PRIV-K": ["emergency_window", "D6"], "PRIV-L": ["emergency_review_timeframe", "D6"] } },
+    "CM-CHG":  { "risk_category": "unauthorized change", "control_types": ["change management"], "pattern": "event-driven",
+                 "criteria": { "CHG-B": ["testing", "D1"], "CHG-C": ["approver", "D1"], "CHG-D": ["segregation", "D4"], "CHG-E": ["emergency_timeframe", "D6"], "CHG-F": ["segregation", "D4"] } },
+    "CO-JOB":  { "risk_category": "computer operations", "control_types": ["job monitoring", "job scheduling", "interface monitoring"], "pattern": "event-driven",
+                 "criteria": { "JOB-B": ["detection_timeframe", "D6"], "JOB-F": ["monitoring_timeframe", "D6"], "JOB-I": ["alert_distribution", "D1"] } },
+    "AC-PROV": { "risk_category": "inappropriate access", "control_types": ["access provisioning"], "pattern": "event-driven",
+                 "criteria": { "PROV-B": ["approver", "D1"], "PROV-C": ["approval_timing", "D1"], "PROV-D": ["grant_matches_request", "D1"], "PROV-E": ["conflict_check", "D1"],
+                               "PROV-F": ["rule_approval", "D1"], "PROV-G": ["temporary_grants", "D6"] } },
+    "AC-TERM": { "risk_category": "inappropriate access", "control_types": ["termination", "access termination", "transfer"], "pattern": "event-driven",
+                 "criteria": { "TERM-B": ["removal_timeframe", "D6"], "TERM-D": ["transfer_timeframe", "D6"], "TERM-E": ["notification_timeframe", "D6"], "TERM-F": ["reconciliation_frequency", "D1"] } },
+    "AC-AUTH": { "risk_category": "inappropriate access", "control_types": ["authentication", "password configuration", "authentication configuration"], "pattern": "configuration",
+                 "criteria": { "AUTH-A": ["password_parameters", "D1"], "AUTH-D": ["mfa_scope", "D1"] } },
+    "AC-PHYS": { "risk_category": "inappropriate access", "control_types": ["physical access"], "pattern": "recurring",
+                 "criteria": { "PHYS-B": ["approver", "D1"], "PHYS-C": ["completion_timeframe", "D6"], "PHYS-D": ["removal_timeframe", "D6"] } },
+    "CM-DATA": { "risk_category": "unauthorized change", "control_types": ["direct data change", "data change"], "pattern": "event-driven",
+                 "criteria": { "DATA-B": ["approver", "D1"], "DATA-D": ["segregation", "D4"] } },
+    "DEV-SDLC":{ "risk_category": "unauthorized change", "control_types": ["system development", "system implementation", "data migration"], "pattern": "project-based",
+                 "criteria": { "DEV-B": ["testing", "D1"], "DEV-D": ["approver", "D1"] } },
+    "CO-BKP":  { "risk_category": "computer operations", "control_types": ["backup", "backup and restoration"], "pattern": "configuration",
+                 "criteria": { "BKP-A": ["backup_schedule", "D1"], "BKP-C": ["restore_test_frequency", "D6"] } },
+    "CO-INC":  { "risk_category": "computer operations", "control_types": ["incident management", "problem management"], "pattern": "incident-based",
+                 "criteria": { "INC-B": ["resolution_timeframe", "D6"], "INC-E": ["escalation_rule", "D1"] } },
+    "TP-SOC1": { "risk_category": "service organization", "control_types": ["service organization review", "soc report review"], "pattern": "third-party",
+                 "criteria": {} }
+  }
+}

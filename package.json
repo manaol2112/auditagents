@@ -1,0 +1,40 @@
+{
+  "name": "soxplan",
+  "version": "0.2.0",
+  "description": "SOX ITGC audit planning engine: client document intake, methodology mapping, Planning Agent, Independent Reviewer, human approval. Node + PostgreSQL.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "soxplan": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "migrate": "tsx src/cli.ts migrate",
+    "cli": "tsx src/cli.ts",
+    "serve": "tsx src/server.ts",
+    "dev": "tsx watch src/server.ts",
+    "test": "node scripts/build-methodology.mjs --check && tsx --test test/*.test.ts",
+    "test:docker": "docker compose run --rm --build test",
+    "build:web": "npm --prefix web ci && npm --prefix web run build",
+    "test:web": "npm --prefix web run check"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0",
+    "@fastify/static": "^10.1.10",
+    "exceljs": "4.4.0",
+    "fastify": "^5.12.8",
+    "jszip": "3.10.2",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "embedded-postgres": "18.6.0-beta.19",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,72 @@
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: soxplan
+      POSTGRES_PASSWORD: soxplan
+      POSTGRES_DB: soxplan
+    ports:
+      - "127.0.0.1:${PG_PORT:-5432}:5432"   # loopback only: never expose the database to the network
+    volumes:
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U soxplan -d soxplan"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  # Applies migrations/*.sql once, then exits.
+  migrate:
+    build: .
+    command: ["node", "dist/cli.js", "migrate"]
+    environment:
+      DATABASE_URL: postgres://soxplan:soxplan@db:5432/soxplan
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Read-only Planning Workforce workspace at http://localhost:8765/
+  api:
+    build: .
+    command: ["node", "dist/server.js"]
+    environment:
+      DATABASE_URL: postgres://soxplan:soxplan@db:5432/soxplan
+      HOST: 0.0.0.0
+      PORT: "8765"
+    ports:
+      - "127.0.0.1:${API_PORT:-8765}:8765"   # loopback only: the workspace has no login yet
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+
+  # Engine commands: docker compose run --rm cli <command> ...   (CLAUDE_API_KEY from .env for the model agents)
+  cli:
+    build: .
+    entrypoint: ["node", "dist/cli.js"]
+    environment:
+      DATABASE_URL: postgres://soxplan:soxplan@db:5432/soxplan
+      CLAUDE_API_KEY: ${CLAUDE_API_KEY:-}
+    volumes:
+      - ./fixtures:/app/fixtures:ro
+      - ./evals:/app/evals
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    profiles: ["tools"]
+
+  # Test suite against the compose database server: docker compose run --rm --build test
+  test:
+    build:
+      context: .
+      target: build
+    # Every suite, by glob, so a new test file can never be silently left out of `make test`.
+    command: ["sh", "-c", "npx tsx --test test/*.test.ts"]
+    environment:
+      DATABASE_URL: postgres://soxplan:soxplan@db:5432/postgres
+    depends_on:
+      db:
+        condition: service_healthy
+    profiles: ["tools"]
+
+volumes:
+  pgdata:

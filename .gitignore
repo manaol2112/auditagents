@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.sqlite
+evals/*/runs/
+.env
+scratch/
+__pycache__/
+.DS_Store

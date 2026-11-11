@@ -1,0 +1,57 @@
+{
+  "_comment": "Planted planning deficiencies for the review evaluation. Lines refer to narrative.md and policy.md.",
+  "omit": {
+    "doc": "narrative",
+    "line": 25
+  },
+  "unsupported": {
+    "control_doc": "narrative",
+    "control_line": 17,
+    "attribute": "UAR-D",
+    "criterion": "within ten business days after period end",
+    "cite_doc": "policy",
+    "cite_line": 7
+  },
+  "applicability": {
+    "control_doc": "narrative",
+    "control_line": 21,
+    "expectation": "CHG-DE5",
+    "rationale": "Segregation between development and deployment is enforced by the deployment tool.",
+    "codes_alt": [
+      "CHG-D",
+      "CHG-F",
+      "segregation"
+    ]
+  },
+  "weak_evidence": {
+    "control_doc": "narrative",
+    "control_line": 13,
+    "attribute": "PROV-B",
+    "procedure": "Confirm approvals for sampled role assignments.",
+    "pass_fail": "Pass if the Finance Systems Manager confirms approval.",
+    "evidence": "Email from the Finance Systems Manager confirming that the sampled assignments were approved",
+    "expected_keywords": [
+      "jira"
+    ]
+  },
+  "dropped_contradiction": {
+    "control_doc": "narrative",
+    "control_line": 17,
+    "attribute": "UAR-E",
+    "subject": "removal_timeframe",
+    "criterion": "the Finance Systems team removes it within five business days",
+    "cite_doc": "narrative",
+    "cite_line": 17
+  },
+  "overstatements": [
+    {
+      "control_doc": "narrative",
+      "control_line": 17,
+      "expectation": "UAR-DE2",
+      "rationale": "The export is complete and accurate and shows roles in an understandable form.",
+      "codes_alt": [
+        "UAR-A"
+      ]
+    }
+  ]
+}

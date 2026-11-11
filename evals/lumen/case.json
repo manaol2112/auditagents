@@ -1,0 +1,18 @@
+{
+  "client": "Lumen Health Partners",
+  "fiscal_year_end": "2026-06-30",
+  "time_zone": "America/Chicago",
+  "engagement": "LUMEN-FY2026-ITGC",
+  "period_start": "2025-07-01",
+  "period_end": "2026-06-30",
+  "as_of": "2026-06-30",
+  "systems": [
+    "NetSuite",
+    "ClaimsLens"
+  ],
+  "modules": [
+    "AC-UAR",
+    "AC-PROV",
+    "CM-CHG"
+  ]
+}

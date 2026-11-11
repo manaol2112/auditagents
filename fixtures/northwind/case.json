@@ -1,0 +1,18 @@
+{
+  "client": "Northwind Foods",
+  "fiscal_year_end": "2026-12-31",
+  "time_zone": "America/New_York",
+  "engagement": "NW-FY2026-ITGC",
+  "period_start": "2026-01-01",
+  "period_end": "2026-12-31",
+  "as_of": "2026-12-31",
+  "systems": [
+    "SAP ECC",
+    "Concur"
+  ],
+  "modules": [
+    "AC-UAR",
+    "AC-PROV",
+    "CM-CHG"
+  ]
+}

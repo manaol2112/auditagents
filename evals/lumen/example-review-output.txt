@@ -1,0 +1,82 @@
+Review summary for LUMEN-FY2026-ITGC (proposer model:replay:2026-11-06T230710+0000-claude-opus-5-5.json (proposal cb9efe9d5a0c))
+  Approvable now: no. 5 blocking item(s), 33 decision(s) for the approver, 10 walkthrough question(s)/note(s).
+  (10 blocking and 41 warning validation findings before grouping.)
+
+  Control (label)                 Modules            Blocking  Decide  Info
+  P-397d12aece (LHP-01)           AC-PROV                   1      13     2
+  P-14735a8ee7 (LHP-02)           AC-PROV                   1       6     2
+  P-8ea3240cbb (LHP-03)           AC-UAR                    2       6     2
+  P-a40c9cf7e5 (LHP-04)           CM-CHG                    1       6     2
+  P-8d09163ef2 (LHP-05)           CM-CHG                    0       7     2
+  engagement                      -                         0       1     0
+
+BLOCKING (resolve before approval): 5
+  - P-397d12aece [approval_timing]: Contradictory client sources (x2)
+      V6 P-397d12aece/PROV-C: criterion depends on an open contradiction
+  - P-14735a8ee7 [approver]: Contradictory client sources (x2)
+      V6 P-14735a8ee7/PROV-B: criterion depends on an open contradiction
+  - P-8ea3240cbb [reviewer]: Contradictory client sources (x2)
+      V6 P-8ea3240cbb/UAR-C: criterion depends on an open contradiction
+  - P-8ea3240cbb [removal_timeframe]: Contradictory client sources (x2)
+      V6 P-8ea3240cbb/UAR-E: criterion depends on an open contradiction
+  - P-a40c9cf7e5 [segregation]: Contradictory client sources (x2)
+      V6 P-a40c9cf7e5/CHG-D: criterion depends on an open contradiction
+
+DECISIONS FOR THE APPROVER: 33
+  - engagement: Coverage decision needed
+      No AC-UAR control documented for ClaimsLens; proposed status 'unresolved coverage gap' needs the approver's decision (exclude with rationale, covered elsewhere, or gap).
+  - P-8ea3240cbb [UAR-DE1]: Potential design gap
+      NetSuite/AC-UAR/UAR-DE1 is partially covered (contributions: LHP-03=partial); confirm necessity and outcome at the walkthrough.
+  - P-8ea3240cbb [UAR-DE2]: Potential design gap
+      NetSuite/AC-UAR/UAR-DE2 is partially covered (contributions: LHP-03=partial); confirm necessity and outcome at the walkthrough.
+  - P-8ea3240cbb [UAR-DE3]: Potential design gap
+      NetSuite/AC-UAR/UAR-DE3 is partially covered (contributions: LHP-03=partial); confirm necessity and outcome at the walkthrough.
+  - P-8ea3240cbb [UAR-DE4]: Potential design gap
+      NetSuite/AC-UAR/UAR-DE4 is partially covered (contributions: LHP-03=partial); confirm necessity and outcome at the walkthrough.
+  - P-8ea3240cbb [UAR-DE5]: Potential design gap
+      NetSuite/AC-UAR/UAR-DE5 is partially covered (contributions: LHP-03=partial); confirm necessity and outcome at the walkthrough.
+  - P-8ea3240cbb [UAR-DE6]: Potential design gap
+      NetSuite/AC-UAR/UAR-DE6 is not covered (contributions: LHP-03=none); confirm necessity and outcome at the walkthrough.
+  - P-14735a8ee7, P-397d12aece [PROV-DE1]: Potential design gap
+      NetSuite/AC-PROV/PROV-DE1 is partially covered (contributions: LHP-01=partial, LHP-02=partial); confirm necessity and outcome at the walkthrough.
+  ... 25 more; use --findings for all
+
+WALKTHROUGH QUESTIONS AND NOTES: 10
+  - P-397d12aece [LHP-01]: Proposer information gap (x4)
+      LHP-01: Owner of the Okta provisioning rules
+  - P-14735a8ee7 [LHP-02]: Proposer information gap (x5)
+      LHP-02: Identity of the person who assigns roles in NetSuite
+  - P-8ea3240cbb [LHP-03]: Proposer information gap (x6)
+      LHP-03: Completion timeframe for the review
+  - P-a40c9cf7e5 [LHP-04]: Proposer information gap (x5)
+      LHP-04: Emergency change procedure and timeframe
+  - P-8d09163ef2 [LHP-05]: Proposer information gap (x6)
+      LHP-05: Testing requirements for ClaimsLens
+  - P-397d12aece [LHP-01]: Criterion not defined by the client (walkthrough question) (x4)
+      D1: no verified client source defines 'approver' for LHP-01; the Planner does not supply a value.
+  - P-14735a8ee7 [LHP-02]: Criterion not defined by the client (walkthrough question) (x4)
+      D1: no verified client source defines 'grant_matches_request' for LHP-02; the Planner does not supply a value.
+  - P-8ea3240cbb [LHP-03]: Criterion not defined by the client (walkthrough question) (x2)
+      D6: no verified client source defines 'completion_timeframe' for LHP-03; the Planner does not supply a value.
+  ... 2 more; use --findings for all
+Proposer: model:replay:2026-11-06T230710+0000-claude-opus-5-5.json (proposal cb9efe9d5a0c)
+  controls found        5/5
+  module mappings       5/5 expected hit, 0 extra
+  defined criteria      6/6 quoted correctly
+  undefined criteria    10/10 left undefined, 0 invented
+  contradictions        1/1 detected
+  gaps surfaced         5/5 expected not-covered expectations visible
+  distractors mapped    0/3 (lower is better)
+  engine guardrails     0 unverified sources, 0 omitted expectations filled
+  validation            10 blocking, 41 warnings
+  INTEGRITY  unsupported criteria 0; missed material risks 0/14; omitted necessary procedures 0/14
+  QUALITY    evidence 10/10; population 5/5; pass/fail 4/4; client-specific questions 20/86
+  FORMATTING engine corrections 0 
+  key status: NOT YET REVIEWED by a qualified auditor; treat quality scores as provisional until a human owns this key
+  control ids: ['P-14735a8ee7', 'P-397d12aece', 'P-8d09163ef2', 'P-8ea3240cbb', 'P-a40c9cf7e5']
+  model usage           replay:2026-11-06T230710+0000-claude-opus-5-5.json: None in / None out, cache read None
+    okta-lifecycle       found=True  modules expected ['AC-PROV'] proposed ['AC-PROV'] refs ['LHP-01']
+    jira-roles           found=True  modules expected ['AC-PROV'] proposed ['AC-PROV'] refs ['LHP-02']
+    netsuite-review      found=True  modules expected ['AC-UAR'] proposed ['AC-UAR'] refs ['LHP-03']
+    netsuite-change      found=True  modules expected ['CM-CHG'] proposed ['CM-CHG'] refs ['LHP-04']
+    claimslens-pipeline  found=True  modules expected ['CM-CHG'] proposed ['CM-CHG'] refs ['LHP-05']

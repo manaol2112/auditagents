@@ -1,0 +1,13 @@
+node_modules
+dist
+scratch
+.env
+*.sqlite
+evals/*/runs
+.git
+src/soxplan
+tests
+__pycache__
+**/node_modules
+web/dist
+**/.DS_Store
